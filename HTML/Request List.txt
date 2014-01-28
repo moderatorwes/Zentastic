@@ -1,0 +1,25 @@
+<div class="container">
+    <div id="lg"></div>
+    <div class="mt"></div>
+
+    <div class="col-lg-12">
+        <nav class="my-activities-nav">
+            {{my_activities_navigation}}
+        </nav>
+    </div>
+
+    <div class="request-table-toolbar well well-requests">
+        {{request_filter}} {{organization_selector}} {{status_selector}}
+    </div>
+
+    <nav class="my-activities-sub-nav">
+        {{title}}
+    </nav>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            {{request_table}}
+        </table>
+    </div>
+    <div class="mt"></div>
+</div>

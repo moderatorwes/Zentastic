@@ -1,0 +1,29 @@
+<div id ="lg">
+</div>
+<div class="container">
+<civ class="row mt">
+   <div class="col-lg-3">
+   <span class="request-id">{{request_id}}</span>
+  <h2>{{subject}}</h2>
+  <hr>
+  {{request_details}}
+ 
+  </div>
+  <div class="col-lg-9">
+    {{satisfaction}}
+    {{comment_list}}
+    {{comment_form}}
+  </div>
+</div>
+</div>
+
+<div id="dg" class="">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h4 class="">ZENDESK <i class="fa fa-plus"></i> BOOTSTRAP</h4>
+					   <p>What do you get when you combine Zendesk and Bootstrap? <br> A ****ing awesome Help Center!</p>
+				</div>
+			</div>
+		</div>
+	</div>

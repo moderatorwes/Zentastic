@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row mt centered">
+        <div class="col-lg-12">
+            <div class="digits">
+                4<i class="fa fa-meh-o"></i>4
+            </div>
+            <p>The page you are trying to reach can not be found or has been moved.</br>
+                You can try to search within our website instead:</p>
+            {{search_bar}}
+        </div>
+    </div>
+</div>

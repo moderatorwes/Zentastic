@@ -1,0 +1,47 @@
+<div id="dg-small" class="">
+    <div class="container">
+        <div class="col-lg-12 centered">
+            <h1>{{visibility}} {{title}}</h1>
+            <p>{{author_name}} - {{updated_at}}</p>
+            <button type="submit" class="btn btn-warning">{{subscribe}}</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt">
+        <div class="col-lg-12 well well-small">
+            {{body}}
+        </div>
+        <div class="article-attachments">
+            {{attachments}}
+        </div>
+        <footer class="article-footer clearfix">
+            {{vote}} {{share}}
+        </footer>
+    </div>
+
+    <div class="row mt">
+        <div class="col-lg-8 col-lg-offset-2 well">
+            <!--<div class="article-column">
+  <div class="article-more-questions"> -->
+            {{more_questions}}
+
+            <section class="article-comments">
+                <h4>{{comment_heading}}  <span class="badge badge-warning">{{comment_count}}</span></h4> {{comment_list}} {{comment_form}}
+            </section>
+        </div>
+    </div>
+</div>
+
+<div id="dg" class="">
+    <div class="container">
+        <div class="row centered">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h4 class="">ZENDESK <i class="fa fa-plus"></i> BOOTSTRAP</h4>
+                <p>What do you get when you combine Zendesk and Bootstrap?
+                    <br>A ****ing awesome Help Center!</p>
+            </div>
+        </div>
+    </div>
+</div>

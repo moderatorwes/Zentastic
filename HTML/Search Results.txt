@@ -1,0 +1,20 @@
+<div id="dg-small" class="">
+    <div class="container">
+        <div class="col-lg-12 centered">
+            <h1>{{result_heading}}</h1>
+            {{search_bar_small}}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-lg-12">
+        {{results}}
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-lg-12 centered">
+        {{results_pagination}}
+    </div>
+</div>

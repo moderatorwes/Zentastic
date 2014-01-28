@@ -1,0 +1,27 @@
+<div class="container">
+
+
+    <div id="lg"></div>
+    <div class="mt"></div>
+
+    <div class="col-lg-12">
+        <nav class="my-activities-nav">
+            {{my_activities_navigation}}
+        </nav>
+
+
+        <nav class="my-activities-sub-nav">
+            {{contribution_navigation}}
+        </nav>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            {{contribution_table}}
+        </table>
+    </div>
+        
+    <div class="mt">
+    </div>
+    
+</div>
