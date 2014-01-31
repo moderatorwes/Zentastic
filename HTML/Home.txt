@@ -1,89 +1,83 @@
 <div id="headerwrap">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h1><i class="fa fa-heart fa-2x"></i>Your Zendesk<br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1><i class="fa fa-heart fa-2x"></i>Your Zendesk<br>
                     Make it Responsive.</h1>
+{{promoted_articles}}
+                </div><!-- /col-lg-6 -->
 
-                <div id="promoted" style="display: none;">
-                    {{dc.promotedarticles}}
-                </div>{{promoted_articles}}
+                <div class="col-lg-6"><img alt="" class="img-responsive" src=
+                "https://p1.zdassets.com/hc/theme_assets/426700/200017498/ipad-hand.png"></div><!-- /col-lg-6 -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div><!-- /headerwrap -->
+
+    <div class="container">
+        <div class="row mt centered">
+            <div class="col-lg-6 col-lg-offset-3">
+                <h1>Why our Clients like us</h1>
             </div>
-            
+        </div><!-- /row -->
 
-            <div class="col-lg-6">
-                <img alt="" class="img-responsive" src="https://p1.zdassets.com/hc/theme_assets/426700/200017498/ipad-hand.png">
-            </div>
-        </div>
-    </div>
-</div>
+        <div class="row mt centered">
+            <div class="col-lg-6 col-lg-offset-3">
+                <div class="carousel slide" data-ride="carousel" id=
+                "carousel-example-generic">
+                    <!-- Indicators -->
 
+                    <ol class="carousel-indicators"></ol>
+                    <!-- Wrapper for slides -->
 
-<div class="container">
-    <div class="row mt centered">
-        <div class="col-lg-6 col-lg-offset-3">
-            <h1>Why our Clients like us</h1>
-        </div>
-    </div>
-
-    <div class="row mt centered">
-        <div class="col-lg-6 col-lg-offset-3">
-            <div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
-                <!-- Indicators -->
-
-                <ol class="carousel-indicators"></ol>
-                <!-- Wrapper for slides -->
-
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <blockquote>
-                            <p>Awesome customer support.</p><small>Marissa
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <blockquote>
+                                <p>Awesome customer support.</p><small>Marissa
                                 Mayer <cite title="Source Title">@
-                                Yahoo</cite></small>
-                            <br>
-                        </blockquote>
-                    </div>
+                                Yahoo</cite></small><br>
+                            </blockquote>
+                        </div>
 
-                    <div class="item">
-                        <blockquote>
-                            <p>Super fast customer support. My issue was resolved within 30 minutes.</p><small>Jeff
+                        <div class="item">
+                            <blockquote>
+                                <p>Super fast customer support. My issue was
+                                resolved within 30 minutes.</p><small>Jeff
                                 Bezos <cite title="Source Title">@
-                                Amazon</cite></small>
-                            <br>
-                        </blockquote>
-                    </div>
+                                Amazon</cite></small><br>
+                            </blockquote>
+                        </div>
 
-                    <div class="item">
-                        <blockquote>
-                            <p>Awesome software and first class customer support.
-                            </p><small>Mikkel Svane <cite title=
-                                "Source Title">@ Zendesk</cite></small>
-                            <br>
-                        </blockquote>
+                        <div class="item">
+                            <blockquote>
+                                <p>Awesome software and first class customer
+                                support.</p><small>Mikkel Svane <cite title=
+                                "Source Title">@ Zendesk</cite></small><br>
+                            </blockquote>
+                        </div>
                     </div>
                 </div>
+            </div><!-- /col-lg-8 -->
+        </div><!-- /row -->
+        <!--</div><! --/container -->
+{{search_bar}}
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default accordian-group">
+                {{category_tree}}
             </div>
         </div>
-    </div>
-   
-    {{search_bar}}
-    
-    <div class="panel-group" id="accordion">
-        <div class="panel panel-default accordian-group">
-            {{category_tree}}
-        </div>
-    </div>
-</div>
+    </div><!-- /row -->
+    <!-- /container -->
 
-<div class="" id="dg">
-    <div class="container">
-        <div class="row centered">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h4 class="">ZENDESK BOOTSTRAP</h4>
+    <div class="" id="dg">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h4 class="">ZENDESK BOOTSTRAP</h4>
 
-                <p>What do you get when you combine Zendesk and Bootstrap?
-                    <br>A ****ing awesome Help Center!</p>
-            </div>
-        </div>
+                    <p>What do you get when you combine Zendesk and
+                    Bootstrap?<br>
+                    A ****ing awesome Help Center!</p>
+                </div>
+            </div><!-- row -->
+        </div><!-- container -->
     </div>
-</div>
