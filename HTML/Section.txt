@@ -1,33 +1,32 @@
-<div id="dg-small" class="">
+ <div id="dg-small" class="">
     <div class="container">
-        <div class="col-lg-12 centered">
-            <h1>{{visibility}} {{title}}</h1>
-            {{search_bar_small}}
-        </div>
+      <div class="col-lg-12 centered">
+     <h1>{{visibility}} {{title}}</h1>
+      {{search_bar_small}}
+      </div>
     </div>
-</div>
+  </div>
 
 
 <div class="container">
-    <div class="row mt">
-        <div class="col-lg-12 well">
-            <div class="col-lg-12 pull-right">
-                {{subscribe}}
-            </div>
-            {{article_list}}
-        </div>
-    </div>
-</div>
-
+  <div class="row mt">
+  {{breadcrumbs}}
+	  <div class="col-lg-12 well">
+	     <div class="pull-right">
+           <button type="submit" class="btn btn-warning">{{subscribe}}</button>
+      </div>
+				{{article_list}}
+      </div>
+	</div><!-- /row -->
+</div><!-- /container -->
 
 <div id="dg" class="">
-    <div class="container">
-        <div class="row centered">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h4 class="">ZENDESK <i class="fa fa-plus"></i> BOOTSTRAP</h4>
-                <p>What do you get when you combine Zendesk and Bootstrap?
-                    <br>A ****ing awesome Help Center!</p>
-            </div>
-        </div>
-    </div>
-</div>
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h4 class="">ZENDESK <i class="fa fa-plus"></i> BOOTSTRAP</h4>
+					  <p>What do you get when you combine Zendesk and Bootstrap? <br> A ****ing awesome Help Center!</p>
+				</div>
+			</div>
+		</div>
+	</div>

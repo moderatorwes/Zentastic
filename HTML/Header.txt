@@ -1,0 +1,30 @@
+<div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-target=".navbar-collapse"
+                data-toggle="collapse" type="button"></button> <a class=
+                "navbar-brand" href="/hc/en-us" style=
+                "font-weight: bold">MW-Zentastic</a>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <nav class="user-nav">
+                            <button class="btn btn-primary pull-right" type=
+                            "submit">{{submit_a_request}}</button> 
+                            <!--{{submit_a_request}}
+              <!=={{language_selector}} -->
+                             <!--{{user_info}} -->
+                        </nav>
+
+                        <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                                {{user_info}}
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
