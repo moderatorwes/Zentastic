@@ -1,0 +1,118 @@
+/*
+ * jQuery v1.9.1 included
+ */
+
+// Customizations by ModeratorWes
+$(document).ready(function () {
+
+
+    //hide submit ticket button
+    if (HelpCenter.user.role == "anonymous") {
+        $(".user-nav").hide();
+    }
+
+    //hide avatar on User Info 
+
+    $('.user-avatar').hide();
+
+    //Change color and text of Promoted Articles
+    $("h3:contains('Promoted articles')").text('Getting Started');
+
+
+
+    //setup dynamic accordion//
+
+    $('li.section').addClass('span4');
+
+    var headers = $('.category h2')
+    for (var i = 0; i < headers.length; i++) {
+        var title = $(headers[i]).text(),
+            flatTitle = title.replace(/[\s+\/\\]/g, '');
+        $(headers[i]).siblings('section').wrapAll('<div id="' + flatTitle + '" class="panel-body collapse"><div class="accordion-inner"></div></div>');
+
+        $(headers[i]).replaceWith('<div class="panel-heading accordion-header"><h1 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#' + flatTitle + '"><span>' + title + '</span></a></h1></div>');
+        $('#' + flatTitle).prev('.panel-heading').andSelf().unwrap();
+        if (i === 0) {
+            $('#' + flatTitle).addClass('in')
+        }
+
+        $('.category-empty').parent().hide();
+    }
+    // disable expansion
+    $('.article-list li a').removeAttr('data-asynchtml-ressource');
+
+
+    //Only Show 3 articles under section level //
+    if (document.location.href.indexOf('section') == -1) {
+        var categories = $('ul.article-list');
+        for (var j = categories.length - 1; j >= 0; j--) {
+            var articles = $(categories[j]).find('li'),
+                nativeMore = $(categories[j]).siblings('.see-all-articles');
+            if (articles.length > 3) {
+                for (var k = 3; k < articles.length; k++) {
+                    $(articles[k]).hide();
+                }
+                var moreLink = $(categories[j]).parent().find('h3 a').attr('href'),
+                    linkText = 'More...';
+                if (articles.length <= 6 && nativeMore.length == 0) {
+                    linkText += "See all " + articles.length + " articles";
+                }
+                $("<a class='moreTopics' href=" + moreLink + ">" + linkText + "</a>").insertAfter($(categories[j]));
+            }
+        }
+    }
+
+
+    $(".category .section-tree .article-list").hide();
+    $(".category .section-tree h3").each(function () {
+        if ($(this).next().is(".article-list")) {
+            $(this).addClass("closed");
+        }
+    });
+
+
+    // ZenDesk Defaults
+    // social share popups
+    $(".share a").click(function (e) {
+        e.preventDefault();
+        window.open(this.href, "", "height = 500, width = 500");
+    });
+
+    // toggle the share dropdown in communities
+    $(".share-label").on("click", function (e) {
+        e.stopPropagation();
+        var isSelected = this.getAttribute("aria-selected") == "true";
+        this.setAttribute("aria-selected", !isSelected);
+        $(".share-label").not(this).attr("aria-selected", "false");
+    });
+
+    $(document).on("click", function () {
+        $(".share-label").attr("aria-selected", "false");
+    });
+
+    // show form controls when the textarea receives focus
+    $(".answer-body textarea").one("focus", function () {
+        $(".answer-form-controls").show();
+    });
+
+    $(".comment-container textarea").one("focus", function () {
+        $(".comment-form-controls").show();
+    });
+
+});
+
+/* Sort articles by newest first */
+function reverseArticleOrder() {
+    var lists = document.getElementsByClassName('article-list');
+    for (var i = 0; i < lists.length; ++i) {
+        var articles = lists[i];
+        var j = articles.childNodes.length;
+        while (j--) {
+            if (articles.childNodes[j].className != 'article-promoted') {
+                articles.appendChild(articles.childNodes[j]);
+            }
+        }
+    }
+}
+
+window.addEventListener('load', reverseArticleOrder, false);
