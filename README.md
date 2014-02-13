@@ -36,5 +36,9 @@ Known Issues
 Community (I designed this template without the community.  Once ZenDesk make the Community template avaliable then I will update the theme.
 Submit Request Page (The Submit A Request form does not fall within the container for this template.  Once ZenDesk makes the Submit Request Form Template then I will update the theme.
 
+Screenshots
+===========
+![Alt text](/Screenshots/Zentastic HomePage.png?raw=true)
+
 
 Special thanks to Carlos Alvarez for the template & the ZenDesk Community for their contributions.
