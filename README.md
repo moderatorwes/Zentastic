@@ -38,7 +38,7 @@ Submit Request Page (The Submit A Request form does not fall within the containe
 
 Screenshots
 ===========
-![Alt text](/Screenshots/Zentastic HomePage.png?raw=true)
+![Alt text](/Screenshots/Zentastic HomePage.png?raw=true "Home Page")
 
 
 Special thanks to Carlos Alvarez for the template & the ZenDesk Community for their contributions.
