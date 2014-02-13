@@ -6,9 +6,10 @@
 $(document).ready(function () {
 
 
-    //hide submit ticket button
+    //hide submit ticket button & subscribe button for anonymous users
     if (HelpCenter.user.role == "anonymous") {
         $(".user-nav").hide();
+        $("button.btn.btn-warning").hide();
     }
 
     //hide avatar on User Info 
