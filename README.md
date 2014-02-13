@@ -1,5 +1,5 @@
-Zentastic v.1
-=============
+Zentastic v1.0
+==============
 
 Zentastic is a custom ZenDesk Theme.  This theme is responsive and will work across many different monitor sizes including mobile phones.  You can use this theme or any code in this theme however you would like.  Enjoy!
 
