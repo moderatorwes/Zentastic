@@ -3,6 +3,8 @@ Zentastic v1.0
 
 Zentastic is a custom ZenDesk Theme.  This theme is responsive and will work across many different monitor sizes including mobile phones.  You can use this theme or any code in this theme however you would like.  Enjoy!
 
+See it Live Here:  http://moderatorwes.zendesk.com
+
 
 Features
 =========
@@ -39,6 +41,7 @@ Submit Request Page (The Submit A Request form does not fall within the containe
 Screenshots
 ===========
 ![Alt text](/Screenshots/Zentastic HomePage.png?raw=true "Home Page")
+![Alt text](/Screenshots/Article.png?raw=true "Article Page")
 
 
 Special thanks to Carlos Alvarez for the template & the ZenDesk Community for their contributions.
