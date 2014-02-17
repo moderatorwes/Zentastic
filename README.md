@@ -17,6 +17,9 @@ Features
 
 How to Install
 ==============
+
+Select the Noble Feast Theme as this was the site I used to start off with.  
+
 Assets
 * Open up the Assets folder and download these two files
 * Upload the files to the Assets area in ZenDesk
