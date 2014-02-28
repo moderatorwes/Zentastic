@@ -102,18 +102,4 @@ $(document).ready(function () {
 
 });
 
-/* Sort articles by newest first */
-function reverseArticleOrder() {
-    var lists = document.getElementsByClassName('article-list');
-    for (var i = 0; i < lists.length; ++i) {
-        var articles = lists[i];
-        var j = articles.childNodes.length;
-        while (j--) {
-            if (articles.childNodes[j].className != 'article-promoted') {
-                articles.appendChild(articles.childNodes[j]);
-            }
-        }
-    }
-}
 
-window.addEventListener('load', reverseArticleOrder, false);
