@@ -5,7 +5,15 @@
 // Customizations by ModeratorWes
 $(document).ready(function () {
 
-
+    //alignment of Community Section
+    if(window.location.href.indexOf("communities") > -1) {
+     $('nav.sub-nav').wrap( "<div class='container'></div>");
+    $('nav.community-nav').wrap( "<div class='container'></div>");
+    $('div.main-column').wrap( "<div class='container'></div>");
+    $('div.clearfix').wrap( "<div class='container'></div>");
+  }
+    
+    
     //hide submit ticket button & subscribe button for anonymous users
     if (HelpCenter.user.role == "anonymous") {
         $(".user-nav").hide();
