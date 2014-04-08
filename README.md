@@ -5,6 +5,11 @@ Zentastic is a custom ZenDesk Theme.  This theme is responsive and will work acr
 
 See it Live Here:  http://moderatorwes.zendesk.com
 
+Updates
+========
+04/08/14 - Updated Bootstrap CDN to ver. 3.1.1
+04/08/14 - Updated JS to align Community Section
+
 
 Features
 =========
