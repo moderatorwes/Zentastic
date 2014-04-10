@@ -7,8 +7,8 @@ See it Live Here:  http://moderatorwes.zendesk.com
 
 Updates
 ========
-04/08/14 - Updated Bootstrap CDN to ver. 3.1.1
-04/08/14 - Updated JS to align Community Section
+* 04/08/14 - Updated Bootstrap CDN to ver. 3.1.1
+* 04/08/14 - Updated JS to align Community Section
 
 
 Features
