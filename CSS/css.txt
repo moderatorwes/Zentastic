@@ -1,6 +1,13 @@
 /*This theme also requires the main-zentastic.css file to be uploaded to the Assets tab.
 Customizations by:  ModeratorWes
  */
+ 
+/* CSS fix for IE 10 on Windows 8 and Windows Phone */
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
 
 /* Header additions */
 .header {
