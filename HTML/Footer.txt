@@ -1,0 +1,11 @@
+<div id="dg-small" class="">
+		<div class="container">
+			<div class="row centered">
+			  <a href="#"><i class="fa fa-facebook-square fa-lg" style="color:white"></i>
+			  <a href="#"><i class="fa fa-twitter-square fa-lg" style="color:white"></i>
+			  <a href="#"><i class="fa fa-linkedin-square fa-lg" style="color:white"></i>
+			  <a href="#"><i class="fa fa-google-plus-square fa-lg" style="color:white"></i>
+			  <a href="#"><i class="fa fa-envelope fa-lg" style="color:white"></i>
+			</div>
+		</div>
+</div>
