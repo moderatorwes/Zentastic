@@ -3,7 +3,12 @@ Zentastic v1.0
 
 Zentastic is a custom ZenDesk Theme.  This theme is responsive and will work across many different monitor sizes including mobile phones.  You can use this theme or any code in this theme however you would like.  Enjoy!
 
-See it Live Here:  http://moderatorwes.zendesk.com
+If you need to see it live just ask and I will enable it for you.
+
+Like my theme then a simple cup of coffee will do.
+
+
+<a href='http://ko-fi.com?i=8d141f5ae0ba3b8' target='_blank'><img style='border:0px' src='http://ko-fi.com/img/button-4.png' border='0' alt='Buy Me A Coffee :) @ ko-fi.com' /></a>
 
 Updates
 ========
