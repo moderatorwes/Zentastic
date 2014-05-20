@@ -5,10 +5,9 @@ Zentastic is a custom ZenDesk Theme.  This theme is responsive and will work acr
 
 If you need to see it live just ask and I will enable it for you.
 
-Like my theme then a simple cup of coffee will do.
+Like my theme then a cup of coffee will do.
 
-
-<a href='http://ko-fi.com?i=8d141f5ae0ba3b8' target='_blank'><img style='border:0px' src='http://ko-fi.com/img/button-4.png' border='0' alt='Buy Me A Coffee :) @ ko-fi.com' /></a>
+<a href='http://ko-fi.com?i=8d141fc13e992fb' target='_blank'><img style='border:0px' src='http://ko-fi.com/img/button-4.png' border='0' alt='Buy Me A Coffee :) @ ko-fi.com' /></a>
 
 Updates
 ========
