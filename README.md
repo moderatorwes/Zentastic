@@ -11,6 +11,7 @@ Like my theme then show your appreciation with a cup of coffee or two.
 
 Updates
 ========
+* 08/11/15 - Updated Bootstrap to ver. 3.3.5 and FontAwesome to 4.4.0
 * 04/14/14 - Updated CSS & JS for IE 10 on Windows 8 & Windows Phone
 * 04/08/14 - Updated Bootstrap CDN to ver. 3.1.1
 * 04/08/14 - Updated JS to align Community Section
