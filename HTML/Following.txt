@@ -5,19 +5,50 @@
 
     <div class="col-lg-12">
         <nav class="my-activities-nav">
-            {{my_activities_navigation}}
+            <ul>
+              {{#if help_center.request_management_enabled}}
+                <li>{{link 'requests'}}</li>
+              {{/if}}
+              <li>{{link 'contributions'}}</li>
+              <li>{{t 'following'}}</li>
+            </ul>
         </nav>
 
 
 
         <nav class="my-activities-sub-nav">
-            {{title}}
+            {{t 'my_subscriptions'}}
         </nav>
     </div>
 
     <div class="table-responsive">
         <table class="table table-hover">
-            {{following_table}}
+            {{#if subscriptions}}
+              <table>
+                <thead>
+                  <tr>
+                    <th>{{t 'title'}}</th>
+                    <th>{{t 'type'}}</th>
+                    <th>{{t 'subscription'}}</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each subscriptions}}
+                    <tr>
+                      <td><a href="{{url}}" title="{{title}}">{{excerpt title characters=60}}</a></td>
+                      <td>{{name}}</td>
+                      <td>{{subscribe}}</td>
+                      <td>{{unsubscribe}}</td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+
+              {{pagination}}
+            {{else}}
+              <p>{{t 'not_following'}}</p>
+            {{/if}}
         </table>
     </div>
         
