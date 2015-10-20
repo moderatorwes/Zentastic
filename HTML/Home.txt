@@ -1,10 +1,24 @@
-<div id="headerwrap">
+  <div id="headerwrap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <h1><i class="fa fa-heart fa-2x"></i>Your Zendesk<br>
                     Make it Responsive.</h1>
-{{promoted_articles}}
+
+                    <div id="promoted" style="display: none;">
+                        {{dc 'promotedarticles'}}
+                    </div>{{#if promoted_articles}}
+                      <section class="promoted-articles">
+                        <h3>{{t 'promoted_articles'}}</h3>
+                        <ul>
+                          {{#each promoted_articles}}
+                            <li>
+                              <a href="{{url}}">{{title}}</a>
+                            </li>
+                          {{/each}}
+                        </ul>
+                      </section>
+                    {{/if}}
                 </div><!-- /col-lg-6 -->
 
                 <div class="col-lg-6"><img alt="" class="img-responsive" src=
@@ -59,10 +73,65 @@
             </div><!-- /col-lg-8 -->
         </div><!-- /row -->
         <!--</div><! --/container -->
-{{search_bar}}
+{{search}}
         <div class="panel-group" id="accordion">
             <div class="panel panel-default accordian-group">
-                {{category_tree}}
+                {{#if categories}}
+                  <div class="category-tree">
+                    {{#each categories}}
+                      <section class="category">
+                        {{#if ../has_multiple_categories}}
+                          <h2><a href="{{url}}">{{name}}</a></h2>
+                        {{/if}}
+                        {{#each sections}}
+                          <section class="section">
+                            <h3>
+                              {{#if internal}}
+                                <span class="visibility-internal" data-title="{{t 'internal'}}">
+                                  <span class="visibility-internal-icon"></span>
+                                </span>
+                              {{/if}}
+                              <a href="{{url}}">{{name}}</a>
+                            </h3>
+                            {{#if articles}}
+                              <ul class="article-list">
+                                {{#each articles}}
+                                  <li {{#if promoted}} class="article-promoted" {{/if}}>
+                                    {{#if promoted}}
+                                      <span data-title="{{t 'promoted'}}">★</span>
+                                    {{/if}}
+                                    <a href="{{url}}">{{title}}</a>
+                                  </li>
+                                {{/each}}
+                              </ul>
+                              {{#if more_articles}}
+                                <a href="{{url}}" class="see-all-articles">
+                                  {{t 'show_all_articles' count=article_count}}
+                                </a>
+                              {{/if}}
+                            {{else}}
+                              <i class="section-empty">
+                                <a href="{{url}}">{{t 'empty'}}</a>
+                              </i>
+                            {{/if}}
+                          </section>
+                        {{else}}
+                          <i class="category-empty">
+                            <a href="{{url}}">{{t 'empty'}}</a>
+                          </i>
+                        {{/each}}
+
+                        {{#if more_sections}}
+                          <div>
+                            <a href="{{url}}">{{t 'see_all_sections'}}</a>
+                          </div>
+                        {{/if}}
+                      </section>
+                    {{/each}}
+
+                    {{pagination}}
+                  </div>
+                {{/if}}
             </div>
         </div>
     </div><!-- /row -->
