@@ -1,30 +1,44 @@
-<div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle" data-target=".navbar-collapse"
-                data-toggle="collapse" type="button"></button> <a class=
-                "navbar-brand" href="/hc/en-us" style=
-                "font-weight: bold">MW-Zentastic</a>
-            </div>
-
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <nav class="user-nav">
-                            <button class="btn btn-primary pull-right" type=
-                            "submit">{{submit_a_request}}</button> 
-                            <!--{{submit_a_request}}
-              <!=={{language_selector}} -->
-                             <!--{{user_info}} -->
-                        </nav>
-
-                        <form class="navbar-form navbar-left">
-                            <div class="form-group">
-                                {{user_info}}
-                            </div>
-                        </form>
-                    </li>
-                </ul>
+<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/hc/en-us"><b><i class="fa fa-comment"style="color:white"></i>MW-Zentastic</b></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+            <nav class="user-nav">
+              <!--{{link 'new_request' class='submit-a-request'}}
+              <!--{{#if alternative_locales}}
+                <div class="dropdown language-selector" aria-haspopup="true">
+                  <a class="dropdown-toggle">
+                    {{current_locale.name}}
+                  </a>
+                  <span class="dropdown-menu dropdown-menu-end" role="menu">
+                    {{#each alternative_locales}}
+                      <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+                        {{name}}
+                      </a>
+                    {{/each}}
+                  </span>
+                </div>
+              {{/if}} -->
+              {{user_info}}
+            </nav>
+            </li>
+              
+             
+              
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
             </div>
         </div>
     </div>
