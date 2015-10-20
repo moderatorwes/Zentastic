@@ -1,8 +1,12 @@
  <div id="dg-small" class="">
     <div class="container">
       <div class="col-lg-12 centered">
-     <h1>{{visibility}} {{title}}</h1>
-      {{search_bar_small}}
+     <h1>{{#if section.internal}}
+       <span class="visibility-internal" data-title="{{t 'internal'}}">
+         <span class="visibility-internal-icon"></span>
+       </span>
+     {{/if}} {{section.name}}</h1>
+      {{search submit=false class='search-small'}}
       </div>
     </div>
   </div>
@@ -10,13 +14,31 @@
 
 <div class="container">
   <div class="row mt">
-  {{breadcrumbs}}
 	  <div class="col-lg-12 well">
 	     <div class="pull-right">
-           <button type="submit" class="btn btn-warning">{{subscribe}}</button>
+          {{subscribe}}
       </div>
-				{{article_list}}
+				{{#if section.articles}}
+				  <ul class="article-list">
+				    {{#each section.articles}}
+				      <li {{#if promoted}} class="article-promoted" {{/if}}>
+				        {{#if promoted}}
+				          <span data-title="{{t 'promoted'}}">★</span>
+				        {{/if}}
+				        <a href="{{url}}">{{title}}</a>
+				      </li>
+				    {{/each}}
+				  </ul>
+				{{else}}
+				  <i class="section-empty">
+				    <a href="{{section.url}}">{{t 'empty'}}</a>
+				  </i>
+				{{/if}}
+
+				{{pagination}}
+				<a href="/hc/en-us"><b><i class="fa fa-reply"></i>Back</b></a>
       </div>
+      
 	</div><!-- /row -->
 </div><!-- /container -->
 
