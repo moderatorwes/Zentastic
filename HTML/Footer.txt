@@ -1,4 +1,4 @@
-<div id="dg-small" class="">
+<div id="dg-small">
 		<div class="container">
 			<div class="row centered">
 			  <a href="#"><i class="fa fa-facebook-square fa-lg" style="color:white"></i>
