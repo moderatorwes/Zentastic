@@ -2,11 +2,37 @@
     <div class="row mt centered">
         <div class="col-lg-12">
             <div class="digits">
-                4<i class="fa fa-meh-o"></i>4
+              
+              {{#is error 'unauthorized'}}
+              			4<i class="fa fa-meh-o"></i>1
+              <p>User has to be authenticated to proceed</p>
+                    <h2>{{link 'sign_in'}}</h2>
+              				<p>{{#link 'help_center'}}
+                       {{t 'back_to_homepage'}}
+                  		 {{/link}}</p>
+               {{/is}}
+
+               {{#is error 'forbidden'}}
+                  4<i class="fa fa-meh-o"></i>3
+                   <p>User is not allowed to proceed</p>
+                       <p>{{#link 'help_center'}}
+                       {{t 'back_to_homepage'}}
+                  		 {{/link}}</p>
+               {{/is}}
+
+               {{#is error 'not_found'}}
+                   4<i class="fa fa-meh-o"></i>4
+              			<p>The page you are trying to reach can not be found or has been moved.</p>                  
+                       <p>{{#link 'help_center'}}
+                       {{t 'back_to_homepage'}}
+                  		 {{/link}}</p>
+              {{/is}}
+                  
+              
             </div>
-            <p>The page you are trying to reach can not be found or has been moved.</br>
-                You can try to search within our website instead:</p>
-            {{search_bar}}
-        </div>
+          
+          <h2> OR</h2></br> <p>search our website instead:</p>
+            {{search}}
+         
+       </div>
     </div>
-</div>
