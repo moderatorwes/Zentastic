@@ -1,20 +1,85 @@
 <div id="dg-small" class="">
     <div class="container">
         <div class="col-lg-12 centered">
-            <h1>{{result_heading}}</h1>
-            {{search_bar_small}}
+            <h1>{{t 'results' query=query count=results_count}}</h1>
+            {{search submit=false class='search-small'}}
         </div>
     </div>
 </div>
 
 <div class="container">
     <div class="col-lg-12">
-        {{results}}
+        <section class="search-results-column">
+          <h2 class="search-results-subheading">
+            {{t 'knowledge_base'}}
+          </h2>
+          {{#if article_results}}
+            <ul class="search-results-list">
+              {{#each article_results}}
+                <li class="search-result">
+                  <a href="{{url}}" class="search-result-link">{{title}}</a>
+                  {{#if vote_sum}}
+                    <span class="search-result-votes">{{vote_sum}}</span>
+                  {{/if}}
+                  <div class="search-result-meta">{{meta}}</div>
+                  <div class="search-result-description">{{text}}</div>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            <p>
+              {{t 'no_results' query=query}}
+              {{#link 'help_center'}}
+                {{t 'browse_knowledge_base'}}
+              {{/link}}
+            </p>
+          {{/if}}
+        </section>
+
+        {{#if help_center.community_enabled}}
+          <section class="search-results-column">
+            <h2 class="search-results-subheading">
+              {{t 'community'}}
+            </h2>
+            {{#if post_results}}
+              <ul class="search-results-list">
+                {{#each post_results}}
+                  <li class="search-result">
+                    <a href="{{url}}" class="search-result-link">{{title}}</a>
+                    <div class="search-result-description">
+                      {{text}}
+                    </div>
+                    <div class="search-result-meta">
+                      <span class="search-result-meta-name">
+                        {{#if author.url}}
+                          <a href="{{author.url}}" target="_zendesk_lotus">{{author.name}}</a>
+                        {{else}}
+                          {{author.name}}
+                        {{/if}}
+                      </span>
+                      <span class="search-result-meta-time">{{date created_at}}</span>
+                      <span class="search-result-meta-count">
+                        {{t 'comments_count' count=comment_count}}
+                      </span>
+                    </div>
+                  </li>
+                {{/each}}
+              </ul>
+            {{else}}
+              <p>
+                {{t 'no_results' query=query}}
+                {{#link 'topics'}}
+                  {{t 'browse_community'}}
+                {{/link}}
+              </p>
+            {{/if}}
+          </section>
+        {{/if}}
     </div>
 </div>
 
 <div class="container">
     <div class="col-lg-12 centered">
-        {{results_pagination}}
+        {{pagination}}
     </div>
 </div>
