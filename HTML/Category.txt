@@ -1,31 +1,73 @@
-<div class="" id="dg-small">
-        <div class="container">
-            <div class="col-lg-12 centered">
-                <h1>{{title}}</h1>{{search_bar_small}}
-            </div>
-        </div>
-    </div>
-
+ <div id="dg-small" class="">
     <div class="container">
-        <div class="row mt well">
-            {{breadcrumbs}}
-
-            <div class="col-lg-12">
-                {{section_tree}}
-            </div>
-        </div>
+      <div class="col-lg-12 centered">
+     <h1>{{category.name}}</h1>
+      {{search submit=false class='search-small'}}
+      </div>
     </div>
+  </div>
 
-    <div class="" id="dg">
-        <div class="container">
-            <div class="row centered">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h4 class="">ZENDESK BOOTSTRAP</h4>
+<div class="container">
+  <div class="row mt well">
+  {{breadcrumbs}}
+	  <div class="col-lg-12">
+				{{#if category.sections}}
+				  <div class="section-tree">
+				    {{#each sections}}
+				      <section class="section">
+				        <h3>
+				          {{#if internal}}
+				            <span class="visibility-internal" data-title="{{t 'internal'}}">
+				              <span class="visibility-internal-icon"></span>
+				            </span>
+				          {{/if}}
 
-                    <p>What do you get when you combine Zendesk and
-                    Bootstrap?<br>
-                    A ****ing awesome Help Center!</p>
-                </div>
-            </div>
-        </div>
-    </div>
+				          <a href="{{url}}">{{name}}</a>
+				        </h3>
+
+				        {{#if articles}}
+				          <ul class="article-list">
+				            {{#each articles}}
+				              <li {{#if promoted}} class="article-promoted" {{/if}} >
+				                {{#if promoted}}
+				                  <span data-title="{{t 'promoted'}}">★</span>
+				                {{/if}}
+				                <a href="{{url}}">{{title}}</a>
+				              </li>
+				            {{/each}}
+				          </ul>
+
+				          {{#if more_articles}}
+				            <a href="{{url}}" class="see-all-articles">
+				              {{t 'show_all_articles' count=article_count}}
+				            </a>
+				          {{/if}}
+
+				        {{else}}
+				          <i class="section-empty">
+				            <a href="{{url}}">{{t 'empty'}}</a>
+				          </i>
+				        {{/if}}
+				      </section>
+				    {{/each}}
+				  </div>
+
+				{{else}}
+				  <i class="category-empty">
+				    <a href="{{category.url}}">{{t 'empty'}}</a>
+				  </i>
+				{{/if}}
+      </div>
+	</div><!-- /row -->
+</div><!-- /container -->
+
+<div id="dg" class="">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h4 class="">ZENDESK <i class="fa fa-plus"></i> BOOTSTRAP</h4>
+					   <p>What do you get when you combine Zendesk and Bootstrap? <br> A ****ing awesome Help Center!</p>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div>
