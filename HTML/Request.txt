@@ -3,16 +3,151 @@
 <div class="container">
 <civ class="row mt">
    <div class="col-lg-3">
-   <span class="request-id">{{request_id}}</span>
-  <h2>{{subject}}</h2>
+   <span class="request-id">{{t 'request' request_number=request.id}}</span>
+  <h2>{{request.subject}}</h2>
   <hr>
-  {{request_details}}
+  <dl class="request-details">
+    <dt>{{t 'submitted_by' requester_name=request.requester.name}}</dt>
+
+    {{#form 'organization' id='request-organization'}}
+      <br/>
+      <dt>{{t 'organization'}}</dt>
+      <dd>
+        {{select 'organization'}}
+        <script>
+        $(document).ready(function() {
+          // Submit organization form when the value in the select changes
+          $("#request-organization select").on("change", function() {
+            $("#request-organization").submit();
+          });
+        });
+        </script>
+      </dd>
+    {{/form}}
+
+    {{#if group}}
+      <dt>{{t 'group'}}</dt>
+      <dd>
+        <span>{{group.name}}</span>
+      </dd>
+    {{/if}}
+
+    <dt>{{t 'status'}}</dt>
+    <dd>
+      <span class="request-status request-{{request.status}}" title="{{request.status_description}}">
+        {{request.status_name}}
+      </span>
+    </dd>
+
+    {{#if request.type}}
+      <dt>{{t 'type'}}</dt>
+      <dd>
+        <span>
+          {{request.type_name}}
+          {{#is request.type 'task'}}{{t 'task_due_date' due_date=request.due_date}}{{/is}}
+        </span>
+      </dd>
+    {{/if}}
+
+    {{#if request.priority}}
+      <dt>{{t 'priority'}}</dt>
+      <dd>
+        <span>{{request.priority_name}}</span>
+      </dd>
+    {{/if}}
+
+    {{#if assignee}}
+      <dt>{{t 'assignee'}}</dt>
+      <dd>
+        <span>{{assignee.name}}</span>
+      </dd>
+    {{/if}}
+
+    {{#each custom_fields}}
+      <dt>{{title}}</dt>
+      <dd>
+        <span>{{value}}</span>
+      </dd>
+    {{/each}}
+
+    {{#if attachments}}
+      <dt>{{t 'attachments_heading'}}</dt>
+      <dd>
+        <ul class="attachment-list">
+          {{#each attachments}}
+            <li>
+              <a href="{{url}}" target="_blank">{{name}}</a>
+              <span>({{size}})</span>
+            </li>
+          {{/each}}
+        </ul>
+      </dd>
+    {{/if}}
+
+    {{#if collaborators}}
+      <dt>{{t 'ccs'}}</dt>
+      <dd>
+        <span>{{t 'ccs_description'}}</span>
+        <ul class="attachment-list">
+          {{#each collaborators}}
+            <li>{{name}}</li>
+          {{/each}}
+        </ul>
+      </dd>
+    {{/if}}
+  </dl>
  
   </div>
   <div class="col-lg-9">
     {{satisfaction}}
-    {{comment_list}}
-    {{comment_form}}
+    <ul class="comment-list">
+      {{#each comments}}
+        <li id="{{anchor}}" class="comment">
+          <div class="comment-avatar {{#if author.agent}} comment-avatar-agent {{/if}}">
+            <img src="{{author.avatar_url}}" alt="Avatar"/>
+          </div>
+          <div class="comment-container">
+            <strong class="comment-author">{{author.name}}</strong>
+            <span class="comment-published">{{date created_at}}</span>
+            <div class="comment-body">{{body}}</div>
+            {{#if attachments}}
+              <ul class="attachment-list">
+                {{#each attachments}}
+                  <li>
+                    <a href="{{url}}" target="_blank">{{name}}</a>
+                    <span>({{size}})</span>
+                  </li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+
+    {{pagination}}
+    <div class="request-follow-up">
+      {{comment_callout}}
+    </div>
+
+    {{#form 'comment' class='comment-form'}}
+      <div class="comment-avatar">
+        {{user_avatar class='user-avatar'}}
+      </div>
+      <div class="comment-container">
+        {{textarea 'body' rows='4'}}
+        <div class="comment-attachments">
+          {{upload}}
+        </div>
+        <div class="comment-form-controls clearfix">
+          <div class="comment-mark-as-solved">
+            {{checkbox 'mark_as_solved'}}
+            {{label 'mark_as_solved'}}
+          </div>
+          {{input type='submit'}}
+        </div>
+      </div>
+    {{/form}}
   </div>
 </div>
 </div>
