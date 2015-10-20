@@ -1,8 +1,16 @@
 <div id="dg-small" class="">
     <div class="container">
         <div class="col-lg-12 centered">
-            <h1>{{visibility}} {{title}}</h1>
-            <p>{{author_name}} - {{updated_at}}</p>
+            <h1>{{#if article.internal}}
+              <span class="visibility-internal" data-title="{{t 'internal'}}">
+                <span class="visibility-internal-icon"></span>
+              </span>
+            {{/if}} {{article.title}}</h1>
+            <p>{{#if article.author.url}}
+              <a href="{{article.author.url}}" target="_zendesk_lotus">{{article.author.name}}</a>
+            {{else}}
+              {{article.author.name}}
+            {{/if}} - {{date article.updated_at}}</p>
             <button type="submit" class="btn btn-warning">{{subscribe}}</button>
         </div>
     </div>
@@ -10,15 +18,32 @@
 
 <div class="container">
     <div class="row mt">
-    {{breadcrumbs}}
         <div class="col-lg-12 well well-small">
-            {{body}}
+            {{article.body}}
         </div>
         <div class="article-attachments">
-            {{attachments}}
+            <ul class="attachments">
+              {{#each attachments}}
+                <li>
+                  <a href="{{url}}" target="_blank">{{name}}</a>
+                  <span>({{size}})</span>
+                </li>
+              {{/each}}
+            </ul>
         </div>
         <footer class="article-footer clearfix">
-            {{vote}} {{share}}
+            {{#with article}}
+              <div class="article-vote">
+                <span class="article-vote-question">{{t 'was_this_article_helpful'}}</span>
+                <div class="article-vote-controls">
+                  {{vote 'up' class='article-vote-up' selected_class='article-voted'}}
+                  {{vote 'down' class='article-vote-down' selected_class='article-voted'}}
+                </div>
+                <small class="article-vote-count">
+                  {{vote 'label' class='article-vote-label'}}
+                </small>
+              </div>
+            {{/with}} {{share}}
         </footer>
     </div>
 
@@ -26,10 +51,62 @@
         <div class="col-lg-8 col-lg-offset-2 well">
             <!--<div class="article-column">
   <div class="article-more-questions"> -->
-            {{more_questions}}
+            {{request_callout}}
 
             <section class="article-comments">
-                <h4>{{comment_heading}}  <span class="badge badge-warning">{{comment_count}}</span></h4> {{comment_list}} {{comment_form}}
+                <h4>{{t 'comments'}}  <span class="badge badge-warning">{{article.comment_count}}</span></h4> {{#if comments}}
+                  <ul class="comment-list">
+                    {{#each comments}}
+                      <li id="{{anchor}}" class="comment">
+                        <div class="comment-avatar {{#if author.agent}} comment-avatar-agent {{/if}}">
+                          <img src="{{author.avatar_url}}" alt="Avatar">
+                        </div>
+                        <div class="comment-container">
+                          <header class="comment-header">
+                            <strong class="comment-author">
+                              {{#if author.url}}
+                                <a href="{{author.url}}" target="_zendesk_lotus">{{author.name}}</a>
+                              {{else}}
+                                {{author.name}}
+                              {{/if}}
+                            </strong>
+                            <span class="comment-published">{{date created_at}}</span>
+                            {{#if pending}}
+                              <span class="comment-pending">{{t 'pending_approval'}}</span>
+                            {{/if}}
+                          </header>
+                          <div class="comment-body markdown">{{body}}</div>
+                          {{#if editor}}
+                            <div class="comment-edited meta">
+                              {{t 'comment_edited' editor_name=editor.name}} {{date edited_at timeago=true}}
+                            </div>
+                          {{/if}}
+                          <footer class="comment-footer">
+                            <span class="comment-actions">
+                              {{#with ticket}}
+                                <a href="{{url}}" target="_zendesk_lotus" class="escalation-badge">
+                                  #{{id}}
+                                </a>
+                              {{/with}}
+                              {{actions}}
+                            </span>
+                          </footer>
+                        </div>
+                      </li>
+                    {{/each}}
+                  </ul>
+                {{/if}} {{#form 'comment' class='comment-form'}}
+                  <div class="comment-avatar">
+                    {{user_avatar class='user-avatar'}}
+                  </div>
+
+                  <div class="comment-container">
+                    {{textarea 'body' rows='4'}}
+                    <div class="comment-form-controls">
+                      {{input type='submit'}}
+                    </div>
+                  </div>
+                {{/form}}
             </section>
         </div>
     </div>
