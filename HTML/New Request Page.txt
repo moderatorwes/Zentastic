@@ -1,6 +1,4 @@
-{{breadcrumbs}}
-
-<div class="clearfix">
+<div class="container mt">
 
   <section class="main-column">
     <h1>{{t 'submit_a_request'}}{{#if parent}}
@@ -9,7 +7,7 @@
       </span>
     {{/if}}</h1>
     
-    <div class="form">
+    <div class="form mt well">
       {{request_form}}
     </div>
   </section>
